@@ -55,7 +55,7 @@ export default function App() {
             className="fixed inset-0 z-[200] bg-brand-accent flex items-center justify-center pointer-events-none"
           >
             <div className="flex flex-col items-center gap-6">
-              <motion.div 
+              <motion.img 
                 initial={{ scale: 0.8, rotate: 0 }}
                 animate={{ 
                   scale: [0.8, 1, 0.8],
@@ -66,7 +66,9 @@ export default function App() {
                   repeat: Infinity,
                   ease: "easeInOut"
                 }}
-                className="w-16 h-16 bg-white"
+                src="input_file_3.png"
+                alt="Logo"
+                className="w-16 h-16 object-cover"
               />
               <motion.div 
                 initial={{ opacity: 0, y: 10 }}
@@ -91,7 +93,7 @@ export default function App() {
           {/* Header Section */}
           <header className="h-24 border-b-2 border-brand-border flex items-center justify-between px-6 md:px-12 sticky top-0 bg-white/90 backdrop-blur-md z-50">
             <Link to="/" className="flex items-center gap-3 cursor-pointer group">
-              <div className="w-8 h-8 bg-brand-accent group-hover:rotate-45 transition-transform duration-500"></div>
+              <img src="input_file_3.png" alt="buildrivo" className="w-10 h-10 object-cover group-hover:rotate-45 transition-transform duration-500" />
               <span className="font-display font-black text-2xl tracking-tighter uppercase shrink-0">buildrivo</span>
             </Link>
             
@@ -188,7 +190,7 @@ export default function App() {
             <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
               <div className="col-span-1 md:col-span-2 space-y-8">
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-brand-accent"></div>
+                  <img src="input_file_3.png" alt="buildrivo" className="w-10 h-10 object-cover" />
                   <span className="font-display font-black text-2xl tracking-tighter uppercase">buildrivo</span>
                 </div>
                 <p className="text-brand-muted font-medium max-w-sm">Architecting digital excellence through intentional design and technical strategy.</p>

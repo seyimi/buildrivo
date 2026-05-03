@@ -105,69 +105,88 @@ export default function Home() {
       <StructuredData />
       
       {/* Hero Section */}
-      <section id="home" className="flex flex-col lg:flex-row lg:h-[calc(100vh-6rem)] relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-full lg:w-1/2 h-full bg-zinc-50 -z-10 clip-path-hero hidden lg:block" />
+      <section id="home" className="min-h-[90vh] flex flex-col justify-center px-6 md:px-12 lg:px-24 bg-white relative overflow-hidden border-b-2 border-brand-border">
+        <div className="max-w-7xl w-full py-20">
+          <motion.div 
+            variants={staggerContainer}
+            initial="initial"
+            animate="animate"
+            className="space-y-12 md:space-y-16"
+          >
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+              <motion.div variants={fadeIn} className="flex items-center gap-4">
+                <span className="w-12 h-[2px] bg-brand-accent"></span>
+                <span className="font-mono text-[10px] uppercase font-bold tracking-[0.4em] text-brand-muted">Architecting Digital Excellence</span>
+              </motion.div>
+              
+              <motion.div variants={fadeIn} className="flex items-center gap-3">
+                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                <span className="font-mono text-[9px] uppercase font-black tracking-widest text-brand-muted">Availability: Q3 2024</span>
+              </motion.div>
+            </div>
 
-        <section className="flex-1 lg:border-r-2 lg:border-brand-border p-6 md:p-12 lg:p-20 flex flex-col justify-between gap-12">
-          <motion.div variants={staggerContainer} initial="initial" animate="animate" className="space-y-12">
-            <motion.div variants={fadeIn} className="inline-block px-4 py-1 border-2 border-brand-border rounded-full text-[10px] uppercase font-black tracking-widest bg-white">
-              Creative Tech Agency 2024
-            </motion.div>
-            
-            <motion.h1 variants={fadeIn} className="text-[60px] md:text-[80px] lg:text-[110px] xl:text-[130px] leading-[0.8] font-display font-black tracking-tighter uppercase text-balance">
-              Bold<br/>Moves.<br/>Real<br/>Success.
+            <motion.h1 
+              variants={fadeIn}
+              className="text-[64px] md:text-[110px] lg:text-[140px] xl:text-[170px] leading-[0.8] font-display font-black tracking-tight uppercase text-pretty"
+            >
+              Geometric<br/><span className="text-zinc-300">Balance.</span>
             </motion.h1>
-          </motion.div>
-          
-          <motion.div variants={fadeIn} className="max-w-md space-y-8">
-            <p className="text-lg md:text-xl leading-snug font-medium text-brand-muted">
-              We build digital products that become market leaders. High-performance design meets technical precision.
-            </p>
-            
-            <div className="flex items-center gap-4">
-              <motion.div 
-                initial={{ width: 0 }}
-                whileInView={{ width: 64 }}
-                transition={{ duration: 1, delay: 0.8 }}
-                className="h-[2px] bg-brand-accent"
-              />
-              <span className="font-mono text-[10px] uppercase font-bold tracking-tight text-brand-muted whitespace-nowrap">
-                LONDON — TOKYO — NEW YORK
-              </span>
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-20 pt-8 border-t-2 border-brand-border/10">
+              <motion.div variants={fadeIn} className="lg:col-span-1 hidden xl:flex flex-col gap-8 opacity-20">
+                <span className="font-mono text-[10px] uppercase rotate-90 origin-left whitespace-nowrap tracking-[0.5em] font-black">Scroll to Explore</span>
+              </motion.div>
+
+              <motion.div variants={fadeIn} className="lg:col-span-5 space-y-10">
+                <p className="text-xl md:text-3xl font-medium text-brand-muted leading-tight">
+                  A high-performance creative studio bridging the gap between <span className="text-black italic">vision</span> and <span className="text-brand-accent font-black">technical precision.</span>
+                </p>
+                
+                <p className="text-sm md:text-md text-brand-muted max-w-sm leading-relaxed font-medium">
+                  We specialize in crafting digital ecosystems that aren't just visually distinct but are engineered for measurable impact and global scale.
+                </p>
+
+                <div className="flex flex-wrap gap-4">
+                  <div className="px-5 py-2 border-2 border-brand-border font-mono text-[9px] uppercase font-black tracking-widest bg-zinc-50 hover:bg-black hover:text-white transition-all cursor-default">Strategy</div>
+                  <div className="px-5 py-2 border-2 border-brand-border font-mono text-[9px] uppercase font-black tracking-widest bg-zinc-50 hover:bg-black hover:text-white transition-all cursor-default">Design</div>
+                  <div className="px-5 py-2 border-2 border-brand-border font-mono text-[9px] uppercase font-black tracking-widest bg-zinc-50 hover:bg-black hover:text-white transition-all cursor-default">Studio</div>
+                </div>
+              </motion.div>
+
+              <motion.div variants={fadeIn} className="lg:col-span-6 flex flex-col justify-end gap-12">
+                <div className="grid grid-cols-2 gap-12 md:gap-20">
+                  <div className="space-y-4">
+                    <span className="block text-xl font-mono font-black border-b-2 border-brand-accent w-fit italic">Proprietary Method</span>
+                    <p className="text-[10px] uppercase font-black tracking-widest opacity-50 leading-relaxed">
+                      Rigorous research documentation and user-centric architecture for every project lifecycle.
+                    </p>
+                  </div>
+                  <div className="space-y-4">
+                    <span className="block text-xl font-mono font-black border-b-2 border-brand-accent w-fit italic">Global Operations</span>
+                    <p className="text-[10px] uppercase font-black tracking-widest opacity-50 leading-relaxed">
+                      Supporting enterprises across London, New York, and Tokyo with 24/7 technical strategy.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex flex-row gap-16 border-t-2 border-brand-border pt-12">
+                  <div className="space-y-2">
+                    <span className="block text-5xl md:text-7xl font-display font-black tracking-tighter">20+</span>
+                    <span className="block text-[8px] font-black uppercase tracking-widest opacity-50 leading-tight">Industry<br/>Recognition</span>
+                  </div>
+                  <div className="space-y-2">
+                    <span className="block text-5xl md:text-7xl font-display font-black tracking-tighter">10+</span>
+                    <span className="block text-[8px] font-black uppercase tracking-widest opacity-50 leading-tight">Years Of<br/>Experience</span>
+                  </div>
+                </div>
+              </motion.div>
             </div>
           </motion.div>
-        </section>
+        </div>
 
-        <section className="lg:w-[450px] xl:w-[600px] flex flex-col h-full">
-          <div className="flex-1 p-6 md:p-12 flex flex-col justify-center items-center relative overflow-hidden group">
-            <div className="absolute top-0 right-0 w-48 h-48 border-l-2 border-b-2 border-brand-border bg-white -z-0 opacity-20"></div>
-            
-            <motion.div initial={{ scale: 0.8, opacity: 0, rotate: -10 }} animate={{ scale: 1, opacity: 1, rotate: 0 }} transition={{ duration: 1, ease: "easeOut" }} whileHover={{ scale: 1.05 }} className="w-72 h-72 lg:w-96 lg:h-96 border-[20px] border-brand-border rounded-full flex items-center justify-center relative bg-white shadow-2xl z-10">
-              <div className="w-full h-full rounded-full flex items-center justify-center p-12 text-center bg-zinc-50/50 overflow-hidden relative">
-                <span className="font-display font-black text-7xl lg:text-9xl leading-tight opacity-5 uppercase select-none absolute">Impact</span>
-                <motion.div whileHover={{ scale: 1.2, rotate: 360 }} transition={{ duration: 0.6 }} className="w-24 h-24 bg-brand-accent rounded-full flex items-center justify-center cursor-pointer shadow-lg z-20 group">
-                  <Play size={32} fill="white" className="ml-2 text-white" />
-                </motion.div>
-              </div>
-            </motion.div>
-            
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }} className="mt-12 text-center z-10">
-              <p className="font-mono text-6xl font-black tracking-tighter text-glow">+240%</p>
-              <p className="text-[10px] uppercase tracking-widest font-black mt-2 bg-white px-4 py-1 border-2 border-brand-border">Average Client ROI</p>
-            </motion.div>
-          </div>
-          
-          <div className="h-48 border-t-2 border-brand-border grid grid-cols-2 mt-auto">
-            <motion.div whileHover={{ backgroundColor: "black", color: "white" }} className="border-r-2 border-brand-border p-6 md:p-8 flex flex-col justify-between transition-all group cursor-pointer">
-              <span className="font-mono text-xs opacity-40 group-hover:opacity-100 italic">01.</span>
-              <h3 className="text-xl md:text-2xl font-display font-bold uppercase leading-none">Digital<br/>Core</h3>
-            </motion.div>
-            <motion.div whileHover={{ backgroundColor: "black", color: "white" }} className="p-6 md:p-8 flex flex-col justify-between transition-all group cursor-pointer">
-              <span className="font-mono text-xs opacity-40 group-hover:opacity-100 italic">02.</span>
-              <h3 className="text-xl md:text-2xl font-display font-bold uppercase leading-none">Brand<br/>DNA</h3>
-            </motion.div>
-          </div>
-        </section>
+        {/* Background Accents */}
+        <div className="absolute top-0 right-0 w-1/4 h-full bg-zinc-50/50 -z-10 border-l-2 border-brand-border hidden lg:block" />
+        <div className="absolute top-0 right-0 w-12 h-12 border-l-2 border-b-2 border-brand-border bg-white hidden lg:block" />
       </section>
 
       {/* Featured Projects Section */}
@@ -184,17 +203,19 @@ export default function Home() {
           </div>
           
           <div className="lg:col-span-8 divide-y-2 divide-brand-border">
-            {[
-              { title: "Meta Pay", category: "Global Fintech", year: "2024", img: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=1200" },
-              { title: "Neo Sphere", category: "AI Interface", year: "2023", img: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1200" },
-              { title: "Atlas Core", category: "E-Commerce", year: "2023", img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200" }
-            ].map((item, i) => (
+              {[
+                { title: "Meta Pay", type: "Mobile App", category: "Global Fintech", year: "2024", img: "input_file_0.png" },
+                { title: "Pulse Shop", type: "Website", category: "E-Commerce", year: "2024", img: "input_file_2.png" },
+                { title: "Neo Sphere", type: "Mobile App", category: "AI Interface", year: "2023", img: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1200" },
+                { title: "Volts Cloud", type: "Website", category: "SaaS Platform", year: "2024", img: "input_file_1.png" }
+              ].map((item, i) => (
               <motion.div key={i} {...reveal} whileHover={{ scale: 0.98 }} className="group cursor-pointer overflow-hidden p-6 md:p-12 bg-white flex flex-col md:flex-row justify-between items-end md:items-center gap-8 relative">
                 <div className="z-10 group-hover:pl-4 transition-all duration-500">
                   <div className="flex items-center gap-4 mb-4">
                     <span className="font-mono text-xs font-bold text-brand-accent">/0{i+1}</span>
                     <div className="w-8 h-[1px] bg-brand-border group-hover:w-16 transition-all duration-500" />
                     <span className="font-mono text-xs font-medium text-brand-muted">{item.year}</span>
+                    <span className="px-3 py-1 border border-brand-border font-mono text-[9px] uppercase font-black tracking-widest bg-zinc-50">{item.type}</span>
                   </div>
                   <h3 className="text-4xl md:text-6xl xl:text-7xl font-display font-black uppercase tracking-tighter leading-none group-hover:italic transition-all">
                     {item.title}
